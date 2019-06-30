@@ -9,11 +9,8 @@ const Header = props => (
     </Link>
     <nav>
       <Link to="/about">ABOUT</Link>
-      {/* <Link to="projects">PROJECTS</Link> */}
+      <Link to="/projects">PROJECTS</Link>
       <Link to="/contact">CONTACT</Link>
-      {/* <a className="menu-link" onClick={props.onToggleMenu} href="javascript:;">
-        Menu
-      </a> */}
     </nav>
   </header>
 )

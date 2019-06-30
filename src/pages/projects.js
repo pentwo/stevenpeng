@@ -4,12 +4,39 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import BannerLanding from '../components/BannerLanding'
 
-import pic01 from '../assets/images/pic01.jpg'
-import pic02 from '../assets/images/pic02.jpg'
-import pic03 from '../assets/images/pic03.jpg'
-import pic04 from '../assets/images/pic04.jpg'
-import pic05 from '../assets/images/pic05.jpg'
-import pic06 from '../assets/images/pic06.jpg'
+import website01 from '../assets/images/website01.jpeg'
+import website02 from '../assets/images/website02.jpeg'
+import website03 from '../assets/images/website03.jpeg'
+
+const Project = props => (
+  <div className="inner">
+    <header className="major">
+      <h2>{props.title}</h2>
+    </header>
+    <div className="grid-wrapper">
+      <div className="col-6">
+        <ul>
+          {props.intro.map((item,index) => {
+            return <li key={`intro-${index}`}>{item}</li>
+          })}
+        </ul>
+        <ul className="actions">
+          <li>
+            <a href={`${props.link}`} className="button next">
+              Go to website
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="col-6">
+        <span className="image fit">
+          <img src={props.websiteShot} alt={props.title} />
+        </span>
+      </div>
+    </div>
+  </div>
+)
+
 
 const About = props => (
   <Layout>
@@ -18,78 +45,37 @@ const About = props => (
       <meta name="description" content="Projects Page" />
     </Helmet>
 
-    <BannerLanding title="Projects" />
-
     <div id="main">
-      <section id="one" className="tiles">
-        <article style={{ backgroundImage: `url(${pic01})` }}>
-          <header className="major">
-            <h3>Aliquam</h3>
-            <p>Ipsum dolor sit amet</p>
+      <div className="inner">
+      <header className="major">
+            <h1>Projects</h1>
           </header>
-          <Link to="/landing" className="link primary" />
-        </article>
-        <article style={{ backgroundImage: `url(${pic02})` }}>
-          <header className="major">
-            <h3>Tempus</h3>
-            <p>feugiat amet tempus</p>
-          </header>
-          <Link to="/landing" className="link primary" />
-        </article>
-        <article style={{ backgroundImage: `url(${pic03})` }}>
-          <header className="major">
-            <h3>Magna</h3>
-            <p>Lorem etiam nullam</p>
-          </header>
-          <Link to="/landing" className="link primary" />
-        </article>
-        <article style={{ backgroundImage: `url(${pic04})` }}>
-          <header className="major">
-            <h3>Ipsum</h3>
-            <p>Nisl sed aliquam</p>
-          </header>
-          <Link to="/landing" className="link primary" />
-        </article>
-        <article style={{ backgroundImage: `url(${pic05})` }}>
-          <header className="major">
-            <h3>Consequat</h3>
-            <p>Ipsum dolor sit amet</p>
-          </header>
-          <Link to="/landing" className="link primary" />
-        </article>
-        <article style={{ backgroundImage: `url(${pic06})` }}>
-          <header className="major">
-            <h3>Etiam</h3>
-            <p>Feugiat amet tempus</p>
-          </header>
-          <Link to="/landing" className="link primary" />
-        </article>
-      </section>
-      <section id="two">
-        <div className="inner">
-          <header className="major">
-            <h2>Massa libero</h2>
-          </header>
-          <p>
-            Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-            libero. Mauris aliquet magna magna sed nunc rhoncus pharetra.
-            Pellentesque condimentum sem. In efficitur ligula tate urna.
-            Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.
-            Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-            libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et
-            feugiat tempus.
-          </p>
-          <ul className="actions">
-            <li>
-              <Link to="/landing" className="button next">
-                Get Started
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </section>
+      </div>
+      <Project
+            title="iCare Remedial Massage"
+            intro={["Build this site from scratch using Bulma CSS framework", "Implement Google analytics, Google map widgets", "Custom JavaScript animation"]}
+            link="https://www.icareremedialmassage.com/"
+            websiteShot={website01}
+
+        />
+      <Project
+            title="Wu’s Day Spa n Massage"
+            intro={["Wordpress sites: apply theme, create pages and modify as client requested.", "Implement 3rd party plugin into website"]}
+            link="https://www.wusdayspanmassage.com.au/"
+            websiteShot={website02}
+
+        />
+        <Project
+            title="QB10 Hair Salon"
+            intro={["Wordpress sites: apply theme, create pages and modify as client requested.", "Implement 3rd party plugin into website"]}
+            link="https://www.qb10hairsalon.com.au/"
+            websiteShot={website03}
+        />
+
     </div>
   </Layout>
 )
 
 export default About
+
+
